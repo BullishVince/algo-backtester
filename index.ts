@@ -7,6 +7,7 @@ const app: Express =  express();
 const port = process.env.API_PORT;
 
 const programmingLanguagesRouter = require('./routes/programmingLanguages');
+const hackerPhrasesRouter = require('./routes/hackerPhrases');
 
 app.use(express.json());
 app.use(
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/programming-languages", programmingLanguagesRouter);
+app.use("/hacker", hackerPhrasesRouter);
 
 /* Error handler middleware */
 app.use((err: any, req: any, res: any, next: any) => {
